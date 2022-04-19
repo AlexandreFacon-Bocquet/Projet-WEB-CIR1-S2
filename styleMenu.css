@@ -32,19 +32,7 @@ header, main{
     z-index:1;
 }
 
-/* Visuel du bouton "add a new pic !" */
-.button_newPics {
-    display: inline-block;
-    font: inherit;
-    border: none;
-    background-color: #f5eeee;
-    color: inherit;
-    padding: 6px;
-    border-radius: 5px;
-}
-.button_newPics:hover {
-    background-color: #d6d1d1;
-}
+
 
 
 /* =================== Voir si ne peut pas l'enlever ============== */
@@ -73,74 +61,75 @@ header, main{
 /* Paramètres image profile */
 .profile-image {
     float: left;
-    /* width: calc(33.333% - 1rem); */
+    width: 33.333% - 1rem; 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 3rem;
+    margin-right: 2rem;
 }
 .profile-image img {
     border-radius: 50%;
+    height: 20em;
 }
 
 
-.profile-presentation{
-    float: center;
-}
-.profile-custom{
-    float:right;
+.profile-presentation,
+.profile-custom {
+    float: left;
+    width: 66.666% - 1rem;
 }
 
 .profile-presentation {
-    margin-top: 1.1rem;
+    margin-top: 1rem;
 }
 
-.profile-user-name {
+h1{
     display: inline-block;
-    font-size: 3.2rem;
-    font-weight: 300;
+    font-size: 5.6ex;
+    font-weight: 100ex;
 }
 
-.profile-edit-btn {
-    font-size: 1.4rem;
-    line-height: 1.8;
+
+/* Visuel du bouton "add a new pic !" */
+.button_newPics {
+    font-size: 1.2rem;
+    line-height: 1.6;
     border: 0.1rem solid #dbdbdb;
     border-radius: 0.3rem;
     padding: 0 2.4rem;
-    margin-left: 2rem;
+    position:relative;
+    display: inline-block;
+    background-color: #f5eeee;
+}
+.button_newPics:hover {
+    background-color: #d6d1d1;
 }
 
-.profile-settings-btn {
-    font-size: 2rem;
-    margin-left: 1rem;
+
+.profile-info{
+    margin-top: 0.3rem;
 }
 
-.profile-stats {
-    margin-top: 2.3rem;
-}
-
-.profile-stats li {
+.profile-info li {
     display: inline-block;
     font-size: 1.6rem;
-    line-height: 1.5;
-    margin-right: 4rem;
+    line-height: 10px;
+    margin-right: 3rem;
     cursor: pointer;
 }
 
-.profile-stats li:last-of-type {
+.profile-info li:last-of-type {
     margin-right: 0;
 }
 
-.profile-bio {
+.profile-custom {
     font-size: 1.6rem;
     font-weight: 400;
-    line-height: 1.5;
-    margin-top: 2.3rem;
+    line-height: 1.2;
+    margin-top: 0rem;
 }
 
-.profile-real-name,
-.profile-stat-count,
-.profile-edit-btn {
+.user-info, .button_newPics{
     font-weight: 600;
 }
 
@@ -163,8 +152,7 @@ header, main{
     cursor: pointer;
 }
 
-.gallery-item:hover .gallery-item-info,
-.gallery-item:focus .gallery-item-info {
+.gallery-item:hover .gallery-item-info{
     display: flex;
     justify-content: center;
     align-items: center;

@@ -4,6 +4,7 @@
     transform:translateX(-50%);
     bottom: 15px;
 } */
+
 .menuD{
     width: 100%;
     position: fixed;
@@ -37,7 +38,7 @@
 }
 .menuD a:hover:before{
     animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
-
+    text-decoration: none;
 }
 @keyframes in{
     0%{width: 0; left:0; right:auto; }
