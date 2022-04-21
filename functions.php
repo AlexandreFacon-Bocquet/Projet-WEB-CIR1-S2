@@ -41,12 +41,54 @@
 
     }
 
+
+
     function SubmitAccept(){ //pour accepter que si les champs sont requis
 
+        if(isset($_POST['submit'])){
+            // déclaration des variables
+            $userErr = $mailErr = $mdpErr = "";
+            $user = $mail = $mdp = "";
+            
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                
+                //Champs obligatoires
+                if (empty($_POST["name"])) {
+                    $userErr = "* Le nom est requis";
+                }
+                else {
+                    $user = test_input($_POST["name"]);
+                }
+            
+
+                if (empty($_POST["mail"])) {
+                    $mailErr = "* L'adresse mail est requise";
+                }
+            
+                else {
+                    $mail = test_input($_POST["mail"]);
+                    
+                }
+                
+                if (empty($_POST["mdp"])) {
+                    $mdpErr = "* Un mot de passe est requis";
+                }
+            
+                else {
+                    $mdp = test_input($_POST["mdp"]);
+                    
+                }
+            }
+        }
+    
     }
 
     function UserNameExist(){ //pour le formulaire de création de compte
-
+        $select = mysqli_query($conn, "SELECT * FROM users WHERE username = '".$_POST['username']."'");
+        
+        if(mysqli_num_rows($select)) {
+            exit("Ce nom d'utilisateur existe déjà");
+}
     }
 
-?>
+?> 
