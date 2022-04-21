@@ -4,15 +4,118 @@ body{
     background-repeat: no-repeat;
     background-position:center;
     background-size: auto 100% ;
+    
 }
 
 .container{
     width:60%;
-    margin:0 auto;
-    margin-top:15%;
+    margin:500px auto;
+    margin-top: 13%;
+    border: 12px ridge cornflowerblue;
 }
 
 .container h1{
     float:center;
     position:relative;
+}
+
+h1{
+    color: cornflowerblue;
+    text-shadow: 2px 2px 3px darkblue;
+    letter-spacing: .1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.col-sm-6{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+/*_________________________________________________*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bouton{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: left;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    align-items: center;
+}
+
+button{
+    width: 175px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: cornflowerblue;
+    color: black;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#btnText{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    left: 50px; /* Adri pb js ????????*/
+}
+
+.check-box{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 5px;
+    right: -40px;
+    opacity: 0;
+}
+
+.check-box svg{
+    width: 20px;
+    margin: 10px;
+}
+
+svg path{
+    stroke-width: 5;
+    stroke: #fff;
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    stroke-linecap: round;
+}
+
+.active{
+    background: green;
+    transition: 1s;
+}
+
+.active .check-box{
+    right: 25px;
+    opacity: 100;
+    transition: 1s;
+}
+
+.active p{
+    margin-right: 125px;
+    transition: 1s;
+}
+
+.active svg path{
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 1s;
 }

@@ -21,7 +21,7 @@
         </nav>
 
         <div class="container">
-            <h1> Ajoute une nouvelle pics </h1>
+            <h1><b> Ajoute une nouvelle pics </b></h1>
             <br><br>
             <div class="row">
                 <div class="col-sm-6">
@@ -49,7 +49,25 @@
             </div>
             <br><br>
             
-            <input type="submit" id='submit' value='ADD' >
+            <div class="bouton">
+                    <button id="btn">
+                        <p id="btnText">ADD</p>
+                        <div class="check-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                <script type="text/javascript">
+                    const btn = document.querySelector("#btn");
+                    const btnText = document.querySelector("#btnText");
+            
+                    btn.onclick = () => {
+                        btnText.innerHTML = "Thanks";
+                        btn.classList.add("active");
+                    };
+                </script>
 
         </div>
 
