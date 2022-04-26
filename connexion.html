@@ -22,7 +22,7 @@
 
                 <label><b>Nom d'utilisateur</b></label>
                 <input type="text" placeholder="nom_profil" name="username" required>
-               
+
                 <label><b>Email</b></label>
                 <input type="mail" placeholder="instogram@email.com" name="mail" required>
 
@@ -31,16 +31,20 @@
 
                 <a href="#" class="forgotMDP">Mot de passe oublié ?</a>
 
-                <input type="submit" id='submit' value='LOGIN' >
+                <!--Il faut set le cookie-->
+                <input type="checkbox" value="souvenir" name="souvenir">
+                <label for="souvenir">Se souvenir de moi</label>
+
+                <input type="submit" id='submit' value='LOGIN'>
 
                 <p class="inscription">Pas encore inscrit ? <a href="create.html">Créer un compte</a></p>
                 <!-- <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?> -->
+    if(isset($_GET['erreur'])){
+        $err = $_GET['erreur'];
+        if($err==1 || $err==2)
+            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+    }
+    ?> -->
             </form>
         </div>
         

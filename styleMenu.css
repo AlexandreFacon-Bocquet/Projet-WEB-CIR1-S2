@@ -106,6 +106,7 @@ h1{
 }
 
 
+/*Visuel info profil*/
 .profile-info{
     margin-top: 0.3rem;
 }
@@ -116,6 +117,9 @@ h1{
     line-height: 10px;
     margin-right: 3rem;
     cursor: pointer;
+}
+.profile-info ul{
+    padding:0;
 }
 
 .profile-info li:last-of-type {

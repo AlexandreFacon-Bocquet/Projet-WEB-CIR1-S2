@@ -38,7 +38,10 @@
     }
 
     function VerifConnect(){ //procedure de verification du mdp et du user grace à l'email lors de la connexion
-
+        /*
+            A compléter pour vérifier et pull la commande SQL (le pattern est dans ConnectDB.php)
+        */
+        header("Location:menu.html");
     }
 
 
