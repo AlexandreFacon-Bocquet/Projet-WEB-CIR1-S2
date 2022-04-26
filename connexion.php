@@ -38,13 +38,15 @@
                 <input type="submit" id='submit' value='LOGIN'>
 
                 <p class="inscription">Pas encore inscrit ? <a href="create.html">Créer un compte</a></p>
-                <!-- <?php
-    if(isset($_GET['erreur'])){
-        $err = $_GET['erreur'];
-        if($err==1 || $err==2)
-            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-    }
-    ?> -->
+                <?php
+                    if(isset($_GET['erreur'])){
+                        $err = $_GET['erreur'];
+                        if($err==1 || $err==2)
+                            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                    }
+
+                    setcookie()
+                ?>
             </form>
         </div>
         

@@ -1,5 +1,5 @@
 <?php 
-	$nameDB=""; //encore à définir
+	$nameDB="Intogram"; //encore Ã  dÃ©finir -->
 	$connexion = mysqli_connect("localhost","root","root",$nameDB);
 
 	if(!connexion){
