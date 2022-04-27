@@ -62,15 +62,22 @@
                     <input type="submit" id='submit' value='INSCRIPTION' >
                </section>
                 
+            </form>
+                <?php
+                // S'il y'a une erreur de remplissage :
+                    include("functions.php");
+                    SubmitAcceptCreate();
+                // connexion à la DB
+                    include("ConnectDB.php");
+                    $requete_create="INSERT INTO users VALUES (NULL, '$_POST['pseudo_profil']','$_POST['email_profil']','$_POST['mdp_profil']','$_POST['nom_user']','$_POST['prenom_user']','$_POST['gender_user']','$_POST['bio_user']'";
+                    $result_create=mysqli_query($connexion, $requete_connect);
 
-                
-                <!-- <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?> -->
+                    if($result_connect==FALSE){
+                        echo "erreur execution de requete";
+                        die();
+                    }
+                    else header("Location:menu.php");
+                ?>
         </div>
         
     </body>

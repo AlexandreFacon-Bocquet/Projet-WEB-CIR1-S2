@@ -15,8 +15,8 @@
     </head>
     <body>
         <nav class="menuD"> 
-            <a href="menu.html">Profil</a>
-            <a href="#">Add new pic</a>
+            <a href="menu.php">Profil</a>
+            <a href="add.php">Add new pic</a>
             <a href="deconnexion.php">Déconnexion</a>
         </nav>
 

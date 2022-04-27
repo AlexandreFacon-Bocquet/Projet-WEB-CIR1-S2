@@ -12,8 +12,8 @@
     <body background="images/2-14.jpg.webp" bgproperties="fixed">
         <div class="back"></div>
         <nav class="menuD"> 
-            <a href="menu.html">Profil</a>
-            <a href="add.html">Add new pic</a>
+            <a href="menu.php">Profil</a>
+            <a href="add.php">Add new pic</a>
             <a href="deconnexion.php">Déconnexion</a>
         </nav>
         <div id="container">
@@ -37,15 +37,45 @@
 
                 <input type="submit" id='submit' value='LOGIN'>
 
-                <p class="inscription">Pas encore inscrit ? <a href="create.html">Créer un compte</a></p>
+                <p class="inscription">Pas encore inscrit ? <a href="create.php">Créer un compte</a></p>
                 <?php
-                    if(isset($_GET['erreur'])){
-                        $err = $_GET['erreur'];
-                        if($err==1 || $err==2)
-                            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                    }
+                // connexion à la DB
+                    include("ConnectDB.php");
+                    $requete_connect="SELECT email_profil, mdp_profil, pseudo_profil FROM users";
+                    $result_connect=mysqli_query($connexion, $requete_connect);
 
-                    setcookie()
+                    if($result_connect==FALSE){
+                        echo "erreur execution de requete";
+                        die();
+                    }
+                // S'il y'a une erreur de remplissage :
+                    include("functions.php");
+                    SubmitAcceptConnect();
+
+                    $trouve=TRUE;
+                    if(mysqli_num_rows($result_connect)>0){
+                        while($row=mysqli_fetch_assoc($result_connect)){
+                            if(preg_match($_POST["username"],$row['pseudo_profil'])==TRUE){
+                                if(preg_match($_POST["mail"],$row['email_profil'])==TRUE){
+                                    if(VerifMDP($_POST["password"],$row['mdp_profil'])){
+                                        header("Location:menu.php");
+                                    }
+                                    else $trouve=FALSE;
+                                }
+                                else $trouve=FALSE;
+                            }
+                            else $trouve=FALSE;
+                        }
+                        if($trouve==FALSE){
+                            echo "Mauvais Identifiant ou mot de passe";
+                            mysqli_close();
+                        }
+                    }
+                    
+
+
+
+                    //setcookie()
                 ?>
             </form>
         </div>

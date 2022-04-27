@@ -12,8 +12,8 @@
         <div class="back"></div>
 
         <nav class="menuD"> 
-            <a href="menu.html">Profil</a>
-            <a href="add.html">Add new pic</a>
+            <a href="menu.php">Profil</a>
+            <a href="add.php">Add new pic</a>
             <a href="deconnexion.php">Déconnexion</a>
         </nav>
 
@@ -42,7 +42,7 @@
                 <div class="profile-custom">
                     <!-- mettre la bio en php ac sql -->
                     <p class="bio"> Instogram est une plateforme te permettant de déposer tes photos comme sur insta pour te souvenir de tous tes bons moments ;)</p>
-                    <button class="button_newPics" href="add.html">Add a new pic !</button>
+                    <button class="button_newPics" href="add.php">Add a new pic !</button>
                 </div>
             </div>
         

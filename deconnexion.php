@@ -4,5 +4,5 @@
     session_unset();
     session_destroy();
     mysqli_close($connexion);
-    header('Location: connexion.html');
+    header('Location: connexion.php');
 ?>
