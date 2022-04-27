@@ -12,9 +12,9 @@
     <body background="images/2-14.jpg.webp" bgproperties="fixed">
         <div class="back"></div>
         <nav class="menuD"> 
-            <a href="menu.html">Profil</a>
-            <a href="add.html">Add new pic</a>
-            <a href="connexion.html">Connexion</a>
+            <a href="menu.php">Profil</a>
+            <a href="add.php">Add new pic</a>
+            <a href="connexion.php">Connexion</a>
         </nav>
         <div id="container">
             <form action="create.php" method="POST">
@@ -69,7 +69,8 @@
                     SubmitAcceptCreate();
                 // connexion à la DB
                     include("ConnectDB.php");
-                    $requete_create="INSERT INTO users VALUES (NULL, '$_POST['pseudo_profil']','$_POST['email_profil']','$_POST['mdp_profil']','$_POST['nom_user']','$_POST['prenom_user']','$_POST['gender_user']','$_POST['bio_user']'";
+                    $requete_create= "INSERT INTO users VALUES 
+                        (NULL, '$_POST['pseudo_profil']', '$_POST['email_profil']', '$_POST['mdp_profil']','$_POST['nom_user']','$_POST['prenom_user']','$_POST['gender_user']','$_POST['bio_user']'";
                     $result_create=mysqli_query($connexion, $requete_connect);
 
                     if($result_connect==FALSE){

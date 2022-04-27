@@ -21,13 +21,13 @@
                 <h1>Connexion</h1>
 
                 <label><b>Nom d'utilisateur</b></label>
-                <input type="text" placeholder="nom_profil" name="username" required>
+                <input type="text" placeholder="nom_profil" id="username" name="username" required>
 
                 <label><b>Email</b></label>
-                <input type="mail" placeholder="instogram@email.com" name="mail" required>
+                <input type="mail" placeholder="instogram@email.com" id="mail" name="mail" required>
 
                 <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="votre_mot_de_passe" name="password" required>
+                <input type="password" placeholder="votre_mot_de_passe" id="password" name="password" required>
 
                 <a href="#" class="forgotMDP">Mot de passe oublié ?</a>
 
@@ -38,6 +38,7 @@
                 <input type="submit" id='submit' value='LOGIN'>
 
                 <p class="inscription">Pas encore inscrit ? <a href="create.php">Créer un compte</a></p>
+            </form>
                 <?php
                 // connexion à la DB
                     include("ConnectDB.php");
@@ -68,16 +69,12 @@
                         }
                         if($trouve==FALSE){
                             echo "Mauvais Identifiant ou mot de passe";
-                            mysqli_close();
+                            mysqli_close($connexion);
                         }
                     }
-                    
-
-
-
                     //setcookie()
                 ?>
-            </form>
+            
         </div>
         
     </body>

@@ -16,7 +16,24 @@
             <a href="add.php">Add new pic</a>
             <a href="deconnexion.php">Déconnexion</a>
         </nav>
+        <?php 
+            require("ConnectDB.php");
+            $requete_picture="SELECT * FROM pictures, users";
+            $result=mysqli_query($connexion, $requete_picture);
+            if($result==FALSE){
+                echo "erreur execution de requete";
+                die();
+            }
 
+            if($nbreLignes>0){
+                while($$UneLigne = mysqli_fetch_assoc($resultat)){
+                    $ID=$UneLigne["id"];
+                    foreach($UneLigne as $key){
+
+                    }
+                }
+            }
+        ?>
         <header>
             <div class="profile">
                 <div class="profile-image">
@@ -27,7 +44,7 @@
                 
                 <div class="profile-presentation">
                     <!-- mettre les data en php ac sql -->
-                    <h1 class="user_name">INtogram</h1> 
+                    <h1 class="user_name">INtogram</h1>
                     
 
                 </div>
@@ -46,21 +63,26 @@
                 </div>
             </div>
         
-        <!-- animation contour
-            <div class="bordure-anim">
-                <a href="#!">
-                <span></span>
-                <span></span>
-                </a>
-            </div>
-        -->
+            <!-- animation contour
+                <div class="bordure-anim">
+                    <a href="#!">
+                    <span></span>
+                    <span></span>
+                    </a>
+                </div>
+            -->
             	
         </header>
         <main>
             <div class="gallery">
                 <!--
                     <?php 
-                        
+                        // if(mysqli_num_rows($result)>0){
+                        //     while($row=mysqli_fetch_assoc($result)){
+                                
+                        //     }
+                        // }
+
                     ?>
                 -->
                 <div class="gallery-item" tabindex="0">
