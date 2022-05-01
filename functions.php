@@ -2,7 +2,7 @@
     //vérifier que le mot de passe soit le même:
     function VerifMDP($string1, $string2){ //le string1=mdp et le string2=vérification du mdp et le test est le booléen
         $test=FALSE;
-        if(preg_match($string1,$string2)==FALSE){
+        if(strcmp($string1,$string2)==FALSE){
             $test=FALSE;
         }
         else{
@@ -47,22 +47,29 @@
     }
 
 
-
-    function SubmitAcceptConnect(){ //pour accepter que si les champs sont requis de connexion
-        
-        if(isset($_POST['submit'])){
+    function test_input($data){ //fonction nécessaire pour les SubmitAccept
+        $data=trim($data);
+        $data=stripslashes($data);
+        $data=htmlspecialchars($data);
+        return $data;
+    }
+    function SubmitAcceptConnect($test){ //pour accepter que si les champs sont requis de connexion
+        echo "<p>step1</p>";
+        if(isset($_POST['submitConnect'])){
             // déclaration des variables
             $userErr = $mailErr = $mdpErr = "";
             $user = $mail = $mdp = "";
-            
+            echo "<p>step2</p>";
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                
+                echo "<p>step3</p>";
                 //Champs obligatoires
-                if (empty($_POST["name"])) {
+                if (empty($_POST["username"])) {
                     $userErr = "* Le nom est requis";
                 }
                 else {
-                    $user = test_input($_POST["name"]);
+                    $user = test_input($_POST["username"]);
+                    $test=TRUE;
+                    echo "<p>step4</p>";
                 }
             
 
@@ -72,19 +79,23 @@
             
                 else {
                     $mail = test_input($_POST["mail"]);
-                    
+                    $test=TRUE;
+                    echo "<p>step5</p>";
                 }
                 
-                if (empty($_POST["mdp"])) {
+                if (empty($_POST["password"])) {
                     $mdpErr = "* Un mot de passe est requis";
                 }
             
                 else {
-                    $mdp = test_input($_POST["mdp"]);
-                    
+                    $mdp = test_input($_POST["password"]);
+                    $test=TRUE;
+                    echo "<p>step6</p>";
                 }
             }
         }
+        echo "<p>step7</p>";
+        return $test;
     
     }
 

@@ -3,6 +3,6 @@
     session_start();
     session_unset();
     session_destroy();
-    mysqli_close($connexion);
-    header('Location: connexion.php');
+    header("Location:connexion.php");
+    
 ?>

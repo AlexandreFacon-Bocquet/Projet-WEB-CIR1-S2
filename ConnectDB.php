@@ -1,9 +1,9 @@
 <?php 
 	$nameDB="ProjetWeb"; //Instogram pour Isaure et ProjetWeb pour Alex
-	$connexion = mysqli_connect("localhost","root","root",$nameDB);
+	$connexion = mysqli_connect("localhost","root","root","ProjetWeb");
 
 	if(!$connexion){
-		echo"<p>Erreur de connexion".mysqli_connect_error()."</p>";
+		echo"<h1>Erreur de connexion".mysqli_connect_error()."</h1>";
 		die();
 	}
 	

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <body>
@@ -17,23 +18,34 @@
             <a href="deconnexion.php">Déconnexion</a>
         </nav>
         <?php 
-            require("ConnectDB.php");
-            $requete_picture="SELECT * FROM pictures, users";
+            $nameDB="ProjetWeb"; //Instogram pour Isaure et ProjetWeb pour Alex
+            $connexion = mysqli_connect("localhost","root","root","ProjetWeb");
+        
+            if(!$connexion){
+                echo"<p>Erreur de connexion".mysqli_connect_error()."</p>";
+                die();
+            }
+
+            $requete_picture="SELECT * FROM users";
             $result=mysqli_query($connexion, $requete_picture);
             if($result==FALSE){
                 echo "erreur execution de requete";
                 die();
             }
+            else{
+                $nbreLignes=mysqli_num_rows($result);
+            }
 
             if($nbreLignes>0){
-                while($$UneLigne = mysqli_fetch_assoc($resultat)){
+                while($UneLigne = mysqli_fetch_assoc($result)){
                     $ID=$UneLigne["id"];
                     foreach($UneLigne as $key){
-
-                    }
-                }
-            }
-        ?>
+                        $pseudo= $key["pseudo_profil"];
+                        $prenom = $key["prenom_user"];
+                        $nom = $key["nom_user"];
+                        $gender = $key["gender_user"];
+                        $bio = $key["bio_profile"];
+        ?> 
         <header>
             <div class="profile">
                 <div class="profile-image">
@@ -44,21 +56,23 @@
                 
                 <div class="profile-presentation">
                     <!-- mettre les data en php ac sql -->
-                    <h1 class="user_name">INtogram</h1>
+                    <h1 class="user_name"><?php echo $pseudo; ?></h1>
                     
 
                 </div>
                 <div class="profile-info">
                     <ul>
-                        <li><span class="user_info">Jean</span></li> <!--prenom -->
-                        <li><span class="user_info">Dupond</span></li> <!-- nom -->
-                        <li><span class="user_info">Homme</span></li> <!-- sexe -->
+                        <li><span class="user_info"><?php echo $prenom; ?></span></li> <!--prenom -->
+                        <li><span class="user_info"><?php echo $nom; ?></span></li> <!-- nom -->
+                        <li><span class="user_info"><?php echo $gender; ?></span></li> <!-- sexe -->
                     </ul>
                 </div>
 
                 <div class="profile-custom">
                     <!-- mettre la bio en php ac sql -->
-                    <p class="bio"> Instogram est une plateforme te permettant de déposer tes photos comme sur insta pour te souvenir de tous tes bons moments ;)</p>
+                    <p class="bio"> 
+                    <?php echo $bio; ?>
+                    </p>
                     <button class="button_newPics" href="add.php">Add a new pic !</button>
                 </div>
             </div>
@@ -71,6 +85,11 @@
                     </a>
                 </div>
             -->
+            <?php   
+                    } 
+                }
+            }
+            ?>
             	
         </header>
         <main>
@@ -89,7 +108,7 @@
                     <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">
                     <div class="gallery-item-info">
                         <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:<?php echo $key['nom_profile'] ?></span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
                             <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
                         </ul>
                     </div>
