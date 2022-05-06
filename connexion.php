@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -10,7 +9,7 @@
 
     </head>
     
-    <body background="images/2-14.jpg.webp" bgproperties="fixed">
+    <body background="images/photoInte.jpg" bgproperties="fixed">
         <div class="back"></div>
         <!-- <nav class="menuD"> 
             <a href="menu.php">Profil</a>
@@ -18,9 +17,6 @@
             <a href="deconnexion.php">Déconnexion</a>
         </nav> -->
         <div id="container">
-            <?php 
-                
-            ?>
             <form action="connexionBIS.php" method="POST">
                 <h1>Connexion</h1>
 

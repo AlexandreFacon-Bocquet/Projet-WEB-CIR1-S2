@@ -9,7 +9,7 @@
 
     </head>
     
-    <body background="images/2-14.jpg.webp" bgproperties="fixed">
+    <body background="images/photoInte.jpg" bgproperties="fixed">
         <div class="back"></div>
         <nav class="menuD"> 
             <a href="menu.php">Profil</a>
