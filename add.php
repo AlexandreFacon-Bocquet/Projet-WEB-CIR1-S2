@@ -22,49 +22,31 @@
 
         <?php 
             session_start();
-            if(isset($_POST['submit'])){
-                if(isset($_POST['picfile']) AND isset($_POST['picname']) AND isset($_POST['picdate']) AND isset($_POST['picplace'])){
-                    include("ConnectDB.php");
-                    $picfilename=$_FILES['picfile']['name'];
-                    $picname=$_POST['picname'];
-                    $picdate=$_POST['picdate'];
-                    $picplace=$_POST['picplace'];
-                    $picusername=$_SESSION['pseudo_profil'];
-                    if(empty($_POST['piccomment'])) $piccomment="";
-                    else $piccomment=$_POST['piccomment'];
-                    
-                    $requete="INSERT INTO pictures VALUES (NULL, $picname, $picdate, $piccomment,$picusername,$picplace";
-                    $result=mysqli_query($connexion,$requete);
-                    if(!$result) die();
-                }
-                echo $picfilename;
-            }
             
         ?>
 
         <div class="container">
             <h1><b> Ajoute une nouvelle pics </b></h1>
             <br><br>
-            <form method="POST" action="add.php" enctype="multipart/form-data">
+            <form method="POST" action="adding.php" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-sm-6">
                         <h3> Image </h3>
-                        <input type="file" name="picfile" required>
+                        <input type="file" name="picfile">
                         <img class="newimage"> <!-- Si pas d'image, mettre un sans blanc d'image -->
                     </div>
         
                     <div class ="col-sm-6">
                         <label><b>Nom de la photo :</b></label>
-                        <input type="text" placeholder="pics" name="picname" required>
+                        <input type="text" placeholder="pics" name="picname" >
                         <br>
                         <label><b>Lieu :</b></label>
-                        <input type="text" placeholder="place to be" name="picplace" required>
-                        <br>
+                        <input type="text" placeholder="place to be" name="picplace" >
                         <label><b>Comments :</b></label>
                         <textarea placeholder="tell all about your pic" name="piccomment"></textarea>
                         <br>
                         <label><b>Date de la photo :</b></label>
-                        <input type="date" name="picdate" required>  
+                        <input type="date" name="picdate" >  
                     </div>
                 </div>
                 <br><br>
