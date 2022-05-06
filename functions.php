@@ -30,7 +30,8 @@
     }
 
     //vérifier si c'est bien un email qui est entré :
-    function ValidMAIL($string, $bool){ // le string est l'email et le bool est la variable booléenne pour la validation
+    function ValidMAIL($string){ // le string est l'email et le bool est la variable booléenne pour la validation
+        $bool=TRUE;
         $pattern= "/^[a-zA-Z.-]+@[a-zA-Z.]+(.)[a-z]$/";
         if(preg_match($pattern, $string)==true){
             $bool=TRUE;
@@ -38,6 +39,7 @@
         else{
             $bool=FALSE;
         }
+        return $bool;
     }
 
     function VerifConnect(){ //procedure de verification du mdp et du user grace à l'email lors de la connexion
