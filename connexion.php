@@ -18,9 +18,6 @@
             <a href="deconnexion.php">Déconnexion</a>
         </nav> -->
         <div id="container">
-            <?php 
-                
-            ?>
             <form action="connexionBIS.php" method="POST">
                 <h1>Connexion</h1>
 

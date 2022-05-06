@@ -42,11 +42,11 @@ CREATE TABLE `picture` (
 
 INSERT INTO `picture` (`pic_id`, `pic_name`, `pic_date`, `pic_comment`, `pic_user`, `pic_place`) VALUES
 (1, 'Noël au Zytho', '2021-12-10', 'Les stars en bombe pour noël :D', 'zorzor', 'MI - ISEN LILLE'),
-(2, 'Les CIR1 à la Roypta', '2022-04-04', 'Merci au BDE @Monarch\'ISEN pour cette très belle soirée !!', 'Anya_ll', 'Roy\'pta'),
+(2, 'Les CIR1 à la Roypta', '2022-04-04', 'Merci au BDE @MonarchISEN pour cette très belle soirée !!', 'Anya_ll', 'Roypta'),
 (3, 'Défi Nisendo', '2022-04-06', 'Défi Nisendo : Prendre la photo la plus originale devant le mur. Merci @SurimISEN pour cette très belle collab', 'benji_66', 'PDD'),
-(4, 'On the Throne', '2022-04-04', 'Super belle soirée :))', 'alex_fb', 'Roy\'pta'),
-(5, 'Petite sieste de Louis', '2022-03-25', 'Le p\'tit Louis pris en flagrant délit lors du dernier Zytho !', 'M_Scottez', 'MI - ISEN LILLE'),
-(6, 'Salut toi !', '2022-03-03', 'Au retour de notre petite escapade nocturne, je suis tombée sous le charme d\'Isabelle, sphinx fonctionnaire de 3000 ans.', 'zorzor', 'Pont Napoléon - Lille'),
+(4, 'On the Throne', '2022-04-04', 'Super belle soirée :))', 'alex_fb', 'Roypta'),
+(5, 'Petite sieste de Louis', '2022-03-25', 'Le ptit Louis pris en flagrant délit lors du dernier Zytho !', 'M_Scottez', 'MI - ISEN LILLE'),
+(6, 'Salut toi !', '2022-03-03', 'Au retour de notre petite escapade nocturne, je suis tombée sous le charme d Isabelle, sphinx fonctionnaire de 3000 ans.', 'zorzor', 'Pont Napoléon - Lille'),
 (7, 'Zytho entre profs', '2022-03-16', 'Merci aux photographes de @ink_isen pour ce très beau cliché avec Mr Mele', 'M_Scottez', 'Zytho ISEN'),
 (8, 'Bellewaerd', '2022-04-03', 'Super journée avec Benjamin, Adeline et les parrains !!', 'alex_fb', 'Bellewaerd - Belgique');
 

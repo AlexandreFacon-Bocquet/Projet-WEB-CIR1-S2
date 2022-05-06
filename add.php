@@ -22,21 +22,24 @@
 
         <?php 
             session_start();
-
-            if(isset($_POST['picfile']) AND isset($_POST['picname']) AND isset($_POST['picdate']) AND isset($_POST['picplace'])){
-                include("ConnectDB.php");
-                $picfile=$_POST['picfile'];
-                $picname=$_POST['picname'];
-                $picdate=$_POST['picdate'];
-                $picplace=$_POST['picplace'];
-                $picusername=$_SESSION['pseudo_profil'];
-                if(empty($_POST['piccomment'])) $piccomment="";
-                else $piccomment=$_POST['piccomment'];
-                
-                $requete="INSERT INTO pictures VALUES (NULL, $picname, $picdate, $piccomment,$picusername,$picplace";
-                $result=mysqli_query($connexion,$requete);
-                if(!$result) die();
+            if(isset($_POST['submit'])){
+                if(isset($_POST['picfile']) AND isset($_POST['picname']) AND isset($_POST['picdate']) AND isset($_POST['picplace'])){
+                    include("ConnectDB.php");
+                    $picfilename=$_FILES['picfile']['name'];
+                    $picname=$_POST['picname'];
+                    $picdate=$_POST['picdate'];
+                    $picplace=$_POST['picplace'];
+                    $picusername=$_SESSION['pseudo_profil'];
+                    if(empty($_POST['piccomment'])) $piccomment="";
+                    else $piccomment=$_POST['piccomment'];
+                    
+                    $requete="INSERT INTO pictures VALUES (NULL, $picname, $picdate, $piccomment,$picusername,$picplace";
+                    $result=mysqli_query($connexion,$requete);
+                    if(!$result) die();
+                }
+                echo $picfilename;
             }
+            
         ?>
 
         <div class="container">
@@ -65,7 +68,9 @@
                     </div>
                 </div>
                 <br><br>
-                <div class="bouton">
+                <input type="submit" value="submit">
+
+                <!-- <div class="bouton">
                     <button id="btn">
                         <p id="btnText">ADD</p>
                         <div class="check-box">
@@ -83,7 +88,7 @@
                         btnText.innerHTML = "Thanks";
                         btn.classList.add("active");
                     };
-                </script>
+                </script> -->
             </form>
 
         </div>
