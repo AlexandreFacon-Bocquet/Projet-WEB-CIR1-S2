@@ -20,18 +20,37 @@
             <a href="deconnexion.php">Déconnexion</a>
         </nav>
 
+        <?php 
+            session_start();
+
+            if(isset($_POST['picfile']) AND isset($_POST['picname']) AND isset($_POST['picdate']) AND isset($_POST['picplace'])){
+                include("ConnectDB.php");
+                $picfile=$_POST['picfile'];
+                $picname=$_POST['picname'];
+                $picdate=$_POST['picdate'];
+                $picplace=$_POST['picplace'];
+                $picusername=$_SESSION['pseudo_profil'];
+                if(empty($_POST['piccomment'])) $piccomment="";
+                else $piccomment=$_POST['piccomment'];
+                
+                $requete="INSERT INTO pictures VALUES (NULL, $picname, $picdate, $piccomment,$picusername,$picplace";
+                $result=mysqli_query($connexion,$requete);
+                if(!$result) die();
+            }
+        ?>
+
         <div class="container">
             <h1><b> Ajoute une nouvelle pics </b></h1>
             <br><br>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3> Image </h3>
-                    <input type="file" name="picfile" required>
-                    <img class="newimage"> <!-- Si pas d'image, mettre un sans blanc d'image -->
-                </div>
-    
-                <div class ="col-sm-6">
-                    <form method="POST" action="#">
+            <form method="POST" action="add.php" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3> Image </h3>
+                        <input type="file" name="picfile" required>
+                        <img class="newimage"> <!-- Si pas d'image, mettre un sans blanc d'image -->
+                    </div>
+        
+                    <div class ="col-sm-6">
                         <label><b>Nom de la photo :</b></label>
                         <input type="text" placeholder="pics" name="picname" required>
                         <br>
@@ -41,15 +60,12 @@
                         <label><b>Comments :</b></label>
                         <textarea placeholder="tell all about your pic" name="piccomment"></textarea>
                         <br>
-                       <label><b>Date de la photo :</b></label>
-                       <input type="date" name="picdate" required>
-                    </form>
-                    
+                        <label><b>Date de la photo :</b></label>
+                        <input type="date" name="picdate" required>  
+                    </div>
                 </div>
-            </div>
-            <br><br>
-            
-            <div class="bouton">
+                <br><br>
+                <div class="bouton">
                     <button id="btn">
                         <p id="btnText">ADD</p>
                         <div class="check-box">
@@ -68,6 +84,7 @@
                         btn.classList.add("active");
                     };
                 </script>
+            </form>
 
         </div>
 

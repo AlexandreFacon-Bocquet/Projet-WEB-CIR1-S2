@@ -39,12 +39,6 @@
                 <section id="compte">
                     <label><b>Nom d'utilisateur</b></label>
                     <input type="text" placeholder="nom_profil" name="username" required>
-
-                    <label><b>Photo de profil</b></label><br>
-                    <input type="file" name="pp">
-    
-                    <label><b>Biographie du profil</b></label>
-                    <textarea name="bio" placeholder="Décris toi en queqlques mots ;)"></textarea>
                 </section>
                 
                <section id="gestion">
@@ -64,20 +58,33 @@
                 
             </form>
                 <?php
-                // S'il y'a une erreur de remplissage :
-                    include("functions.php");
-                    SubmitAcceptCreate();
-                // connexion à la DB
-                    include("ConnectDB.php");
-                    $requete_create= "INSERT INTO users VALUES 
-                        (NULL, '$_POST['pseudo_profil']', '$_POST['email_profil']', '$_POST['mdp_profil']','$_POST['nom_user']','$_POST['prenom_user']','$_POST['gender_user']','$_POST['bio_user']'";
-                    $result_create=mysqli_query($connexion, $requete_connect);
-
-                    if($result_connect==FALSE){
-                        echo "erreur execution de requete";
+                    $nameDB="ProjetWeb"; //Instogram pour Isaure et ProjetWeb pour Alex
+                    $connexion = mysqli_connect("localhost","root","root","ProjetWeb");
+                
+                    if(!$connexion){
+                        echo"<h1>Erreur de connexion".mysqli_connect_error()."</h1>";
                         die();
                     }
-                    else header("Location:menu.php");
+                    include("function.php");
+                    $affichageformulaire=1;
+                    if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['genre'])){
+                        if(isset($_POST['username'])){
+                            if(isset($_POST['password'])){
+                                echo"yo";
+                                //if(ValidMDP($_POST['password']);
+                            }
+                        }
+                        else echo "<p> Vous devez créer un pseudo </p>";
+                    }
+                    else echo "<p> Il manque au moins une donnée personnelle</p>";
+                    
+
+
+
+
+
+
+                
                 ?>
         </div>
         

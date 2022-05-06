@@ -26,54 +26,47 @@
                 die();
             }
 
-            $requete_picture="SELECT * FROM users";
-            $result=mysqli_query($connexion, $requete_picture);
+            $requete_users="SELECT * FROM users";
+            $requete_picture="SELECT * FROM picture";
+            $result=mysqli_query($connexion, $requete_users);
+            $result2=mysqli_query($connexion, $requete_picture);
             if($result==FALSE){
-                echo "erreur execution de requete";
+                echo "erreur execution de requete (users)";
+                
                 die();
             }
-            else{
-                $nbreLignes=mysqli_num_rows($result);
+            if($result2==FALSE){
+                echo "erreur execution de requete (photo)";
             }
+            $nbreLignes=mysqli_num_rows($result);
+            $nbrePhotos=mysqli_num_rows($result2);
 
-            if($nbreLignes>0){
-                while($UneLigne = mysqli_fetch_assoc($result)){
-                    $ID=$UneLigne["id"];
-                    foreach($UneLigne as $key){
-                        $pseudo= $key["pseudo_profil"];
-                        $prenom = $key["prenom_user"];
-                        $nom = $key["nom_user"];
-                        $gender = $key["gender_user"];
-                        $bio = $key["bio_profile"];
-        ?> 
+            $essai=$_SESSION['pseudo']; //il marche
+        ?>
         <header>
+            
             <div class="profile">
                 <div class="profile-image">
-                    <!-- mettre l'image en php ac sql -->
-                    <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
-                    
+                    <img src="images/promo67.png" alt="">
                 </div>
                 
                 <div class="profile-presentation">
-                    <!-- mettre les data en php ac sql -->
-                    <h1 class="user_name"><?php echo $pseudo; ?></h1>
-                    
-
+                    <h1 class="user_name">Promo 67</h1>
+                    <h2> Bonjour <?php echo $essai; ?></h2><br>
                 </div>
+
                 <div class="profile-info">
                     <ul>
-                        <li><span class="user_info"><?php echo $prenom; ?></span></li> <!--prenom -->
-                        <li><span class="user_info"><?php echo $nom; ?></span></li> <!-- nom -->
-                        <li><span class="user_info"><?php echo $gender; ?></span></li> <!-- sexe -->
+                        <li><span class="user_info"><?php echo $nbreLignes; ?> Membres </span></li>
+                        <li><span class="user_info"><?php echo $nbrePhotos; ?> Posts </span></li>
                     </ul>
                 </div>
 
                 <div class="profile-custom">
                     <!-- mettre la bio en php ac sql -->
                     <p class="bio"> 
-                    <?php echo $bio; ?>
+                    Bienvenue sur la page Instogram de la promo 67 et plus précisement les CIR1 de ISEN Lille
                     </p>
-                    <button class="button_newPics" href="add.php">Add a new pic !</button>
                 </div>
             </div>
         
@@ -85,29 +78,32 @@
                     </a>
                 </div>
             -->
-            <?php   
-                    } 
-                }
-            }
-            ?>
+           
             	
         </header>
         <main>
             <div class="gallery">
-                <!--
-                    <?php 
-                        // if(mysqli_num_rows($result)>0){
-                        //     while($row=mysqli_fetch_assoc($result)){
-                                
-                        //     }
-                        // }
+            
+                <?php 
+                    // if($nbrePhotos>0){
+                    //         while($row=mysqli_fetch_assoc($result2)){
+                    //             foreach($ligne as $key){
+                    //                 echo '<div class="gallery-item" tabindex="0">';
+                    //                 echo '<img src="posts/'.$ligne['pic_id'].'.JPG" class="gallery-image" alt=""';
+                    //                 echo '</div>';
+                    //             }
+                            
 
-                    ?>
-                -->
+                    //         }
+                    //     }
+
+                ?>
+            
                 <div class="gallery-item" tabindex="0">
                     <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">
                     <div class="gallery-item-info">
                         <ul>
+
                             <li class="gallery-item-likes"><span class="visually-hidden">Likes:<?php echo $key['nom_profile'] ?></span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
                             <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
                         </ul>

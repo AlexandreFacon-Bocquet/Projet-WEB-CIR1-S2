@@ -12,7 +12,7 @@
     }
 
     //vérifier que le mdp soit conforme:
-    function ValidMDP($string, $test){ //le string est le mdp et le test est une variable booléenne qui valid ou non le mdp
+    function ValidMDP($string){ //le string est le mdp et le test est une variable booléenne qui valid ou non le mdp
         $test = TRUE;
         if(strlen($string) < 8){
             $test = FALSE;
@@ -26,6 +26,7 @@
         elseif(preg_match( "/[A-Z]+/" , $string) == FALSE){
             $test=FALSE;
         }
+        return $test;
     }
 
     //vérifier si c'est bien un email qui est entré :

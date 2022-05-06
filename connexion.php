@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -21,7 +21,7 @@
             <?php 
                 
             ?>
-            <form action="connexion2.php" method="POST">
+            <form action="connexionBIS.php" method="POST">
                 <h1>Connexion</h1>
 
                 <label><b>Nom d'utilisateur</b></label>
