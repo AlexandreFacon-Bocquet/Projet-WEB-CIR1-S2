@@ -19,12 +19,26 @@
         </nav>
         <?php 
             $nameDB="ProjetWeb"; //Instogram pour Isaure et ProjetWeb pour Alex
-            $connexion = mysqli_connect("localhost","root","root","ProjetWeb");
+            $connexion = mysqli_connect("localhost","root","root","ProjetWEB");
         
             if(!$connexion){
                 echo"<p>Erreur de connexion".mysqli_connect_error()."</p>";
                 die();
             }
+            $requete_users="SELECT * FROM users";
+            $requete_picture="SELECT * FROM picture";
+            $result=mysqli_query($connexion, $requete_users);
+            $result2=mysqli_query($connexion, $requete_picture);
+
+            if($result==FALSE){
+                echo "erreur execution de requete (users)";
+                
+                die();
+            }
+            if($result2==FALSE){
+                echo "erreur execution de requete (photo)";
+            }
+
 
             $nbreLignes=mysqli_num_rows($result);
             $nbrePhotos=mysqli_num_rows($result2);
@@ -71,19 +85,12 @@
         </header>
 
         <?php
-            $requete_users="SELECT * FROM users";
-            $requete_picture="SELECT * FROM picture";
-            $result=mysqli_query($connexion, $requete_users);
-            $result2=mysqli_query($connexion, $requete_picture);
+            // $requete_users="SELECT * FROM users";
+            // $requete_picture="SELECT * FROM picture";
+            // $result=mysqli_query($connexion, $requete_users);
+            // $result2=mysqli_query($connexion, $requete_picture);
 
-            if($result==FALSE){
-                echo "erreur execution de requete (users)";
-                
-                die();
-            }
-            if($result2==FALSE){
-                echo "erreur execution de requete (photo)";
-            }
+            
             //$tabPicture = mysqli_fetch_assoc($result2);
         ?>
         
@@ -104,8 +111,15 @@
                     
                     <div class="gallery-item-info">
                         <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 94</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 3</li>
+                            <?php 
+                                echo '<li>'.$tabPicture['pic_name'].'</li><br>';
+                                echo '<li class="galleryuser">'.$tabPicture['pic_user'].'</li><br><br>';
+                                echo '<li>'.$tabPicture['pic_comment'].'</li><br><br>';
+                                echo '<li class="gallerydata">'.$tabPicture['pic_date'].'        '.$tabPicture['pic_place'].'</li>';
+
+                            ?>
+                            <!-- <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 94</li>
+                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 3</li> -->
                         </ul>
                     </div>
                 </div>

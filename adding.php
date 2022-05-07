@@ -1,6 +1,6 @@
 <?php           
 				session_start();
-				echo $_SESSION['pseudo_profil'];
+				echo $_SESSION['pseudo'];
 				include("ConnectDB.php");                    
 
                 if(isset($_FILES['picfile']) AND isset($_POST['picname']) AND isset($_POST['picdate']) AND isset($_POST['picplace'])){

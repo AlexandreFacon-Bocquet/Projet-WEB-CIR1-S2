@@ -26,7 +26,7 @@
         ?>
 
         <div class="container">
-            <h1><b> Ajoute une nouvelle pics </b></h1>
+            <h1><b> Ajoute une nouvelle image </b></h1>
             <br><br>
             <form method="POST" action="adding.php" enctype="multipart/form-data">
                 <div class="row">

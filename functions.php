@@ -2,7 +2,7 @@
     //vérifier que le mot de passe soit le même:
     function VerifMDP($string1, $string2){ //le string1=mdp et le string2=vérification du mdp et le test est le booléen
         $test=FALSE;
-        if(strcmp($string1,$string2)==FALSE){
+        if(strcmp($string1,$string2)!=0){
             $test=FALSE;
         }
         else{
@@ -33,7 +33,7 @@
     function ValidMAIL($string){ // le string est l'email et le bool est la variable booléenne pour la validation
         $bool=TRUE;
         $pattern= "/^[a-zA-Z.-]+@[a-zA-Z.]+(.)[a-z]$/";
-        if(preg_match($pattern, $string)==true){
+        if(preg_match($pattern, $string)){
             $bool=TRUE;
         }
         else{
