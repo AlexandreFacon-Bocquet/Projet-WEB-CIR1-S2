@@ -31,6 +31,11 @@
                     }
                     else{
                         $_SESSION['pseudo'] = $username;
+                        if(isset($_POST['souvenir'])){
+                            // set les cookies pour 1h
+                            setcookie('username', $username, time()+3600);
+                            setcookie('mail', $mail, time()+3600);
+                        }
                         header("Location:menu.php");
                     }
                 }

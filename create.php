@@ -49,8 +49,8 @@
 
 
                 <input type="submit" id='submit' name='submit' value='INSCRIPTION' >
-           
-                
+                <br><br>
+                <a href="connexion.php"> > Retour à la page de connexion < </a>
             </form>
         </div>
         
