@@ -158,23 +158,33 @@ h1{
     display: none;
 }
 
+
 .gallery-item-info li {
     display: inline-block;
     font-size: 1.2rem;
     font-weight: 600;
+    width:140px;
+    left:30px;
+}
+.title{
+    font-size:2.8rem
+}
+.comments{
+    font-size: 2.5rem;
 }
 .galleryuser{
     color:rgb(115, 205, 254);
+    font-size: 2.5rem;
 }
 .gallerydata{
     color:#bcbaba;
+    font-size: 2.5rem;
 }
 
 .gallery-item-type {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    font-size: 2.5rem;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 

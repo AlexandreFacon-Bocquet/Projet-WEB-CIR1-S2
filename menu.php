@@ -106,16 +106,16 @@
                 <div class="gallery-item" tabindex="0">
 
                     <?php 
-                        echo '<img src="posts/'.$tabPicture['pic_id'].'.jpg" class="gallery-image" alt="">';
+                        echo '<img src="posts/'.$tabPicture['pic_id'].'.'.$tabPicture['pic_type'].'" class="gallery-image" alt="">';
                     ?>
                     
                     <div class="gallery-item-info">
                         <ul>
                             <?php 
-                                echo '<li>'.$tabPicture['pic_name'].'</li><br>';
+                                echo '<li class="title">'.$tabPicture['pic_name'].'</li><br>';
                                 echo '<li class="galleryuser">'.$tabPicture['pic_user'].'</li><br><br>';
-                                echo '<li>'.$tabPicture['pic_comment'].'</li><br><br>';
-                                echo '<li class="gallerydata">'.$tabPicture['pic_date'].'        '.$tabPicture['pic_place'].'</li>';
+                                echo '<li class="comments">'.$tabPicture['pic_comment'].'</li><br><br>';
+                                echo '<li class="gallerydata">'.$tabPicture['pic_date'].'    <br><br>    '.$tabPicture['pic_place'].'</li>';
 
                             ?>
                             <!-- <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 94</li>

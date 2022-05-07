@@ -26,7 +26,16 @@
         ?>
 
         <div class="container">
-            <h1><b> Ajoute une nouvelle image </b></h1>
+            <div class="title">
+                <span>N</span>
+                <span>E</span>
+                <span>W</span>
+                <span> </span>
+                <span>P</span>
+                <span>O</span>
+                <span>S</span>
+                <span>T</span>
+            </div>
             <br><br>
             <form method="POST" action="adding.php" enctype="multipart/form-data">
                 <div class="row">
@@ -38,19 +47,24 @@
         
                     <div class ="col-sm-6">
                         <label><b>Nom de la photo :</b></label>
+                        <br>
                         <input type="text" placeholder="pics" name="picname" >
                         <br>
                         <label><b>Lieu :</b></label>
+                        <br>
                         <input type="text" placeholder="place to be" name="picplace" >
+                        <br>
                         <label><b>Comments :</b></label>
+                        <br>
                         <textarea placeholder="tell all about your pic" name="piccomment"></textarea>
                         <br>
                         <label><b>Date de la photo :</b></label>
+                        <br>
                         <input type="date" name="picdate" >  
                     </div>
                 </div>
                 <br><br>
-                <input type="submit" value="submit">
+                <button class="bn"><input type="submit" value="submit" class="bnspan"></button>
 
                 <!-- <div class="bouton">
                     <button id="btn">
