@@ -33,12 +33,9 @@
                 //mettre le code de deconnexion
                 session_start();
                 if(isset($_POST['submitConnect'])){
-                    $choix = $_POST["choix"];
-                    if($choix == "oui"){
-                        session_unset();
-                        session_destroy();
-                        header("Location:connexion.php");
-                    }
+                    session_unset();
+                    session_destroy();
+                    header("Location:connexion.php");
                 }
                 
 
