@@ -2,7 +2,6 @@ body{
     background-repeat: no-repeat;
     background-position:center;
     background-size: auto 100% ;
-    
 }
 
 .container{
@@ -12,15 +11,10 @@ body{
     border: 12px none cornflowerblue;
 }
 
-
 .col-sm-6{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-/*_________________________________________________*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
@@ -28,96 +22,8 @@ body{
     box-sizing: border-box;
 }
 
-.bouton{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: left;
-    margin-left: 2%;
-    margin-bottom: 2%;
-    align-items: center;
-}
 
-button{
-    width: 175px;
-    height: 50px;
-    border: none;
-    outline: none;
-    background-color: cornflowerblue;
-    color: black;
-    font-size: 22px;
-    border-radius: 100px;
-    text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-#btnText {
-    position: relative;
-    top: 10px;
-    font-family: "Open Sans", Arial, sans-serif;
-    font-weight:bolder;
-    color:white;
-    left: 50px;
-}
-
-
-.check-box{
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
-    position: absolute;
-    top: 5px;
-    right: -40px;
-    opacity: 0;
-}
-
-
-.check-box svg{
-    width: 20px;
-    margin: 10px;
-}
-
-
-svg path{
-    stroke-width: 5;
-    stroke: #fff;
-    stroke-dasharray: 34;
-    stroke-dashoffset: 34;
-    stroke-linecap: round;
-}
-
-
-.active{
-    background: green;
-    transition: 1s;
-}
-
-
-.active .check-box{
-    right: 25px;
-    opacity: 100;
-    transition: 1s;
-}
-
-
-.active p{
-    margin-right: 125px;
-    transition: 1s;
-}
-
-
-.active svg path{
-    stroke-dashoffset: 0;
-    transition: 1s;
-    transition-delay: 1s;
-}
-
-
-/* Titre */
+/* ======================= Titre Page =============================*/
 .title{
     position:relative;
     top:30px;
@@ -131,23 +37,19 @@ svg path{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 42px;
 }
-
-
 .title span{
 	margin: 0 15px;
 	line-height: .7;
 	text-shadow: 0 0 2px rgba(0, 0, 0, .45);
 	animation: span 3s ease-in infinite alternate;
 }
-
-
 @keyframes span {
 	0%,30%{ margin: 0 15px; }
 	70%,100%{ margin: 0 3px; }
 }
 
 
-/* Décoration du bouton submit */
+/* ============= Décoration du bouton submit ====================== */
 .bn {
     background-image: linear-gradient(135deg, #008aff, #86d472);
     border-radius: 6px;
@@ -162,15 +64,13 @@ svg path{
     text-decoration: none;
     width: 7em;
     z-index: 2;
-    
+    border-style:none;
   }
   
-
   .bn:hover {
     color: #0e0e10;
   }
 
-  
 .bn .bnspan {
     align-items: center;
     background: #fff;

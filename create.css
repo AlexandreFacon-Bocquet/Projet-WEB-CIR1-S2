@@ -76,16 +76,7 @@ input[type=submit]:hover {
 }
 
 input[type=file]{margin-bottom: 10px;}
-/* #personal{
-    grid-area:2/1/3/2;
-}
-#compte{
-    grid-area:2/2/3/3;
-}
-#gestion{
-    grid-area:3/1/4/3;
-}
-input[name=mail], input[name=password],input[name=vpassword]{width: 100%;} */
+
 
 #gestion p{
     font-size:11px;

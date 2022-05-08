@@ -45,7 +45,7 @@ header, main{
 /* =============================================== */
 
 
-/* Profile Section */
+/* Profile Section ***************************************************/
 .profile {
     top:40px;
     position:relative;
@@ -57,7 +57,7 @@ header, main{
     clear: both;
 }
 
-/* Paramètres image profile */
+/* Paramètres image profile ==================*/
 .profile-image {
     float: left;
     width: 33.333% - 1rem; 
@@ -71,6 +71,7 @@ header, main{
     height: 20em;
 }
 
+/* Paramètres reste profile ==================*/
 .profile-presentation,
 .profile-custom {
     float: left;
@@ -95,7 +96,7 @@ h1{
 
 
 
-/*Visuel info profil*/
+/*Visuel info profil ====================*/
 .profile-info{
     margin-top: 0.3rem;
 }
@@ -127,7 +128,7 @@ h1{
 }
 
 /*================================================================*/
-/* Gallery Section */
+/* Gallery Section ************************************************/
 
 .gallery {
     top:30px;
@@ -168,12 +169,15 @@ h1{
     font-weight: 600;
     width:140px;
     left:30px;
+    
 }
 .title{
-    font-size:2.8rem
+    font-size:2.8rem;
+    color:#f3f3f3;
 }
 .comments{
     font-size: 2.5rem;
+    color:#f3f3f3;
 }
 .galleryuser{
     color:rgb(115, 205, 254);
@@ -287,7 +291,7 @@ h1{
     }
 }
 
-/* Spinner Animation */
+/* Spinner Animation **************************************/
 
 @keyframes loader {
     to {
@@ -295,13 +299,7 @@ h1{
     }
 }
 
-/*
-
-The following code will only run if your browser supports CSS grid.
-
-Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling. 
-
-*/
+/* Grid **************************************************/
 
 @supports (display: grid) {
     .profile {

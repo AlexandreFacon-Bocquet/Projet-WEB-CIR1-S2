@@ -1,0 +1,71 @@
+h2{
+    text-align: center;
+    top:100px;
+}
+
+*{
+    position:relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img{
+    position:relative;
+    top:130px;
+    left:40%;
+}
+
+#oui{
+    top:160px;
+    left:43%;
+}
+#non{
+    top:190px;
+    left:43%;
+}
+
+@media screen and (max-width:600px){
+    #oui, #non{left:37%;}
+    img{left:30%;}
+
+}
+/* ============= Décoration du bouton submit ====================== */
+a{
+    color:black;
+    text-decoration: none;
+}
+.bn {
+    background-image: linear-gradient(135deg, #008aff, #86d472);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 7em;
+    z-index: 2;
+    border-style:none;
+}
+
+.bn:hover {
+color: #0e0e10;
+}
+
+.bn .bnspan {
+    align-items: center;
+    background: #fff;
+    border-radius: 6px;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+}
+
+.bn:hover .bnspan {
+background: transparent;
+}

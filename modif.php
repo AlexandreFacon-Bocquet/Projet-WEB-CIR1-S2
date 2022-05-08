@@ -7,13 +7,10 @@
         <link rel="stylesheet" href="add.css" media="screen" type="text/css" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
     </head>
     <body>
+        <!-- Menu déroulant  -->
         <nav class="menuD"> 
             <a href="menu.php">Profil</a>
             <a href="add.php">Add new pic</a>
@@ -21,10 +18,13 @@
         </nav>
 
         <?php 
+            // récupération de l'id passer par l'URL
             $receive=$_GET["id"];
         ?>
 
         <div class="container">
+
+            <!-- Titre de la page -->
             <div class="title">
                 <span>M</span>
                 <span>O</span>
@@ -34,8 +34,9 @@
                 <span>Y</span>
             </div>
 
+            <!-- Récupération des données dans la base pour préremplir le formulaire de modification -->
             <?php 
-                //requete php pour mettre la photo et retrouver les données$
+                //connexion à la base de données
                 require("ConnectDB.php");
                 $requete="SELECT * FROM picture WHERE pic_id=$receive";
                 $result=mysqli_query($connexion,$requete);
@@ -46,17 +47,19 @@
                     $comment=$tab['pic_comment'];
                     $date=$tab['pic_date'];
                     $type=$tab['pic_type'];
-            
             ?>
             <br><br>
             
                 <div class="row">
+                    <!-- affichage de l'image pour se souvenir de quelle post on effectue les modifications -->
                     <div class="col-sm-6">
                         <img class="imagemodify" src="<?php echo 'posts/'.$receive.'.'.$type?>" style="width:230px;height:230px;position:relative;right:0px;">
                     </div>
         
+                    <!-- Formulaire de modification ---------------------------------------------->
                     <div class ="col-sm-6">
                         <form method="POST" action="modify.php">
+                            <!-- modify.php : page php associée -->
                             <label><b>Nom de la photo :</b></label>
                             <br>
                             <input type="text" value="<?php echo $name;?>" name="picname" >
@@ -72,10 +75,10 @@
                             <label><b>Date de la photo :</b></label>
                             <br>
                             <input type="date" name="picdate" value="<?php echo $date;?>">  
-                            <br><br>
+                            <br>
+                            <br>
                             <button class="bn"><input type="submit" value="submit" class="bnspan"></button>
-                            <input type="hidden" value="<?php echo $receive;?>" name="id">
-                            
+                            <input type="hidden" value="<?php echo $receive;?>" name="id"> <!-- pour garder la valeur id -->
                         </form>
                     </div>
                 </div>
@@ -84,8 +87,6 @@
                 }
                 ?>
         </div>
-
     </body>
-
 </body>
 </html>

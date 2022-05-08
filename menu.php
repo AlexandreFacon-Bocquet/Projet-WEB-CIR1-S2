@@ -4,7 +4,6 @@
 <body>
     <head>
        <meta charset="utf-8">
-        <!-- importer le fichier de style -->
         <link rel="stylesheet" href="menu_deroulant.css" media="screen" type="text/css" />
         <link rel="stylesheet" href="styleMenu.css" media="screen" type="text/css" />
         <!-- Pour les logos du glyphicon bootstrap : -->
@@ -25,14 +24,8 @@
         </nav>
 
         <?php 
-            $nameDB="ProjetWeb"; //nom de la base de données
-            $connexion = mysqli_connect("localhost","root","root","ProjetWEB");
-            
-            //on vérifie la connexion à la base de données
-            if(!$connexion){
-                echo"<p>Erreur de connexion".mysqli_connect_error()."</p>";
-                die();
-            }
+            //connexion à la base de données
+            require("ConnectDB.php");
 
             // on initialise les requêtes et leur résultat
             $requete_users="SELECT * FROM users";
@@ -40,28 +33,28 @@
             $result=mysqli_query($connexion, $requete_users);
             $result2=mysqli_query($connexion, $requete_picture);
 
-            //on teste ses résultats
+            //on teste ces résultats
             if($result==FALSE){
                 echo "erreur execution de requete (users)";
-                
                 die();
             }
             if($result2==FALSE){
                 echo "erreur execution de requete (photo)";
+                die();
             }
 
 
             $nbreLignes=mysqli_num_rows($result);
             $nbrePhotos=mysqli_num_rows($result2);
 
-            $essai=$_SESSION['pseudo']; //il marche
+            $essai=$_SESSION['pseudo']; //insère la session 
         ?>
 
         <header>
-            <!-- Présentation du profil-->
+            <!-- Présentation du profil -->
             <div class="profile">
 
-                <!-- Photo de profil-->
+                <!-- Photo de Profil de la promo -->
                 <div class="profile-image">
                     <img src="images/promo67.png" alt="">
                 </div>
@@ -86,7 +79,8 @@
                     Bienvenue sur la page Instogram de la promo 67 et plus précisement les CIR1 de ISEN Lille
                     </p>
                 </div>
-            </div>    	
+            </div>
+        	
         </header>
 
         
@@ -114,15 +108,15 @@
                                 echo '<li class="comments">'.$tabPicture['pic_comment'].'</li><br><br>';
                                 echo '<li class="gallerydata">'.$tabPicture['pic_date'].'    <br><br>    '.$tabPicture['pic_place'].'</li>';
                             ?>
-                            
+
                         </ul>
                     </div>
 
                     <div class="gallery-control">
-                    
-                    <!-- l'utilisateur ne peut supprimer et/ou modifier uniquement ses publications-->
+                    <!-- l'utilisateur ne peut supprimer et/ou modifier UNIQUEMENT SES publications-->
                     <?php 
                         if($tabPicture['pic_user']==$_SESSION['pseudo']){
+                            //vérification du compte correspondant
                             $ID=$tabPicture["pic_id"];
                     ?>
 
@@ -135,7 +129,6 @@
 
                     <?php
                         }
-                    
                     ?>
 
                     </div>

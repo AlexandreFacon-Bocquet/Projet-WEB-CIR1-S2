@@ -26,9 +26,9 @@
             session_start();
         ?>
 
-<!-- Page d'ajout d'une publication -->
+<!-- Page d'ajout d'une publication ----------------------------------------------->
         <div class="container">
-            <!-- Titre -->
+            <!-- Titre ------->
             <div class="title">
                 <span>N</span>
                 <span>E</span>
@@ -42,8 +42,9 @@
 
             <br><br>
             
-            <!-- Formulaire d'ajout d'une publication -->
-            <form method="POST" action="adding.php" enctype="multipart/form-data">     <!-- Adding.php : page php associée -->
+            <!-- Formulaire d'ajout d'une publication ---------------------------->
+            <form method="POST" action="adding.php" enctype="multipart/form-data">
+                <!-- Adding.php : page php associée -->
                 <div class="row">
                     <div class="col-sm-6">
                         <h3> Image </h3>
@@ -67,11 +68,13 @@
                         <br>
                         <input type="date" name="picdate" >  
                     </div>
+
                 </div>
+
                 <br><br>
+                
                 <button class="bn"><input type="submit" value="submit" class="bnspan"></button>
 
-                
             </form>
 
         </div>

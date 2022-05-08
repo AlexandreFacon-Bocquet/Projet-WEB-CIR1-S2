@@ -1,6 +1,6 @@
 <?php
 session_start();
-$nameDB="ProjetWeb"; //Instogram pour Isaure et ProjetWeb pour Alex
+$nameDB="ProjetWeb"; //Nom de la base de données
 $connexion = mysqli_connect("localhost","root","root","ProjetWeb");
 
 if(!$connexion){
@@ -12,7 +12,7 @@ require("functions.php");
 
 
 if(isset($_POST['submit'])){
-        //set up variables 
+    //set up variables 
     $newname=$_POST['nom'];
     $newfname=$_POST['prenom'];
     $newgender=$_POST['sexe'];
@@ -22,28 +22,32 @@ if(isset($_POST['submit'])){
     $verifmdp=$_POST['vpassword'];
 
 
-    //verification 
+    //verification de toutes les données entrées avec le compte
     if(isset($newname) && isset($newfname) && isset($newgender)){
         if(isset($newusername)){
-            if(mysqli_num_rows(mysqli_query($connexion,"SELECT * FROM users WHERE pseudo='$newusername'"))==1){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+            //on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre :
+            if(mysqli_num_rows(mysqli_query($connexion,"SELECT * FROM users WHERE pseudo='$newusername'"))==1){
                 echo "<p> Ce pseudo est déjà utilisé <p>";
             }
             else{
-                // on vérifie chaque variable
                 if(isset($newmail)){
                     if(ValidMAIL($newmail)){
                         if(isset($newmdp)){
                             if(ValidMDP($newmdp)){
                                 if(isset($verifmdp)){
                                     if(VerifMDP($newmdp,$verifmdp)){
-                                        //enfin bon, tout est traversé, il faut maintenant faire la connexion avec la DB
+                                        // toutes les données sont correctent/valides, on effectue maintenant la connexion avec la base de données
                                         $requete_tempo= "INSERT INTO `users`(`pseudo_profil`, `email_profil`, `mdp_profil`, `nom_user`, `prenom_user`, `gender_user`) VALUES ('$newusername','$newmail','$newmdp','$newname','$newfname','$newgender')";
-                                        if(!mysqli_query($connexion,$requete_tempo)){//on crypte le mot de passe avec la fonction propre à PHP: md5()
-                                            echo "Une erresur s'est produite: ".mysqli_error($connexion);//je conseille de ne pas afficher les erreurs aux visiteurs mais de l'enregistrer dans un fichier log
+                                        if(!mysqli_query($connexion,$requete_tempo)){
+                                            echo "Une erresur s'est produite: ".mysqli_error($connexion);
                                         } else {
-                                            echo "Vous êtes inscrit avec succès!";
-                                            //on affiche plus le formulaire
+                                            // Vous êtes inscrit avec succès!";
+
+                                            //création d'une session permettant de garder le pseudo tout au long de la visite, 
+                                            // cela permettra de gérer certaines informations
                                             $_SESSION['pseudo']=$_POST['username'];
+
+                                            // redirection vers la page menu.php
                                             header("Location:menu.php");
                                         }
                                     }

@@ -12,9 +12,13 @@
     
     <body background="images/photoInte.jpg" bgproperties="fixed">
         <div class="back"></div>
-       
+        
         <div id="container">
+
+            <!-- Formulaire de création de compte ------------------------------->
             <form action="creation.php" method="POST">
+            <!-- creation.php : page de formulaire associée -->
+
                 <h1>Création de compte</h1>
                 <label><b>Nom</b></label>
                 <input type="text" placeholder="nom" name="nom" required>
@@ -46,6 +50,8 @@
 
                 <input type="submit" id='submit' name='submit' value='INSCRIPTION' >
                 <br><br>
+
+                <!-- Lien pour retourner à la page de connexion si l'on a fait une fausse mabipulation -->
                 <a href="connexion.php"> > Retour à la page de connexion < </a>
             </form>
         </div>
