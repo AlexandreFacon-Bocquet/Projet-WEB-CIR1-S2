@@ -64,6 +64,7 @@
 
                 <input type="submit" id='submitConnect' name="submitConnect" value='LOGIN'>
 
+                <!-- Lien vers une page de connexion si l'utilisateur n'a pas encore de compte dans la base de données-->
                 <p class="inscription">Pas encore inscrit ? <a href="create.php">Créer un compte</a></p>
 
             </form>

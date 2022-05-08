@@ -13,6 +13,7 @@
         <div class="back"></div>
 
         <div id="container">
+            <!-- Formulaire de validation de déconnexion-->
            <form method="POST">
                    <h1>Déconnexion</h1>
                    <br>
@@ -26,7 +27,7 @@
                </form>
                 
             <?php
-                //mettre le code de deconnexion
+                // code de deconnexion
                 session_start();
                 if(isset($_POST['submitConnect'])){
                     session_unset();

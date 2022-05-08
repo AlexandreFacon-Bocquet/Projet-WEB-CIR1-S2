@@ -29,6 +29,7 @@ if(isset($_POST['submit'])){
                 echo "<p> Ce pseudo est déjà utilisé <p>";
             }
             else{
+                // on vérifie chaque variable
                 if(isset($newmail)){
                     if(ValidMAIL($newmail)){
                         if(isset($newmdp)){

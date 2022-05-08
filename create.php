@@ -12,11 +12,7 @@
     
     <body background="images/photoInte.jpg" bgproperties="fixed">
         <div class="back"></div>
-        <!-- <nav class="menuD"> 
-            <a href="menu.php">Profil</a>
-            <a href="add.php">Add new pic</a>
-            <a href="connexion.php">Connexion</a>
-        </nav> -->
+       
         <div id="container">
             <form action="creation.php" method="POST">
                 <h1>Création de compte</h1>

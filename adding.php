@@ -3,11 +3,11 @@
 				echo $_SESSION['pseudo'];
 				include("ConnectDB.php");                    
 
+				// On vérifie si les variables existent
                 if(isset($_FILES['picfile']) AND isset($_POST['picname']) AND isset($_POST['picdate']) AND isset($_POST['picplace'])){
                 	
                 	//setup variables
                     $picfilename = $_FILES['picfile']['name'];
-					
                     $picname=$_POST['picname'];
                     $picdate=$_POST['picdate'];
                     $picplace=$_POST['picplace'];
@@ -48,14 +48,14 @@
 						$target_file = $id['pic_id'].".".$id['pic_type'];
 					}
 
-					
-					echo "NOUVEAU NOM OUAIS".$target_file;
 					if (move_uploaded_file($_FILES["picfile"]["tmp_name"], "posts/".$target_file)) {
 				    echo "The file has been uploaded.";
 				    }
 				    
 
                 }
+
+				// redirection sur le page menu
                 header("Location:menu.php");
 
 
