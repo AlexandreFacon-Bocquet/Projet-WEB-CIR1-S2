@@ -37,12 +37,12 @@
                 <span>T</span>
             </div>
             <br><br>
+            
             <form method="POST" action="adding.php" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-sm-6">
                         <h3> Image </h3>
                         <input type="file" name="picfile">
-                        <img class="newimage"> <!-- Si pas d'image, mettre un sans blanc d'image -->
                     </div>
         
                     <div class ="col-sm-6">
@@ -54,7 +54,7 @@
                         <br>
                         <input type="text" placeholder="place to be" name="picplace" >
                         <br>
-                        <label><b>Comments :</b></label>
+                        <label><b>Comments :</b> (sans apostophe/guillemets)</label>
                         <br>
                         <textarea placeholder="tell all about your pic" name="piccomment"></textarea>
                         <br>

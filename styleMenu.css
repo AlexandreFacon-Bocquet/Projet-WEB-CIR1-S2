@@ -12,7 +12,7 @@
 body { 
     font-family: "Open Sans", Arial, sans-serif;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: #f3f3f3;
     color: #262626;
     padding-bottom: 3rem;
 }
@@ -31,7 +31,6 @@ header, main{
     padding: 0 2rem;
     z-index:1;
 }
-
 
 
 
@@ -72,7 +71,6 @@ header, main{
     height: 20em;
 }
 
-
 .profile-presentation,
 .profile-custom {
     float: left;
@@ -88,7 +86,12 @@ h1{
     font-size: 5.6ex;
     font-weight: 100ex;
 }
-
+.profile-presentation h2{
+    display: inline-block;
+    font-size: 2.3ex;
+    font-weight: 100ex;
+    color:rgb(9, 141, 79);
+}
 
 
 
@@ -151,7 +154,7 @@ h1{
     top: 0;
     width: 230px;
     height: 230px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .gallery-item-info {
@@ -195,6 +198,11 @@ h1{
     object-fit: cover;
 }
 
+.gallery-control{
+    position:relative;
+    left:0;
+    bottom:0;
+}
 
 
 /* Media Query */

@@ -7,8 +7,13 @@
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="menu_deroulant.css" media="screen" type="text/css" />
         <link rel="stylesheet" href="styleMenu.css" media="screen" type="text/css" />
+        <!-- Pour les logos du glyphicon bootstrap : -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     </head>
+
     <body>
         <div class="back"></div>
 
@@ -53,7 +58,7 @@
                 </div>
                 
                 <div class="profile-presentation">
-                    <h1 class="user_name">Promo 67</h1>
+                    <h1 class="user_name">Promo 67</h1><br>
                     <h2> Bonjour <?php echo $essai; ?></h2><br>
                 </div>
 
@@ -72,27 +77,12 @@
                 </div>
             </div>
         
-            <!-- animation contour
-                <div class="bordure-anim">
-                    <a href="#!">
-                    <span></span>
-                    <span></span>
-                    </a>
-                </div>
-            -->
+            
+
            
             	
         </header>
 
-        <?php
-            // $requete_users="SELECT * FROM users";
-            // $requete_picture="SELECT * FROM picture";
-            // $result=mysqli_query($connexion, $requete_users);
-            // $result2=mysqli_query($connexion, $requete_picture);
-
-            
-            //$tabPicture = mysqli_fetch_assoc($result2);
-        ?>
         
         <main>
             <div class="gallery">
@@ -121,6 +111,22 @@
                             <!-- <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 94</li>
                             <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 3</li> -->
                         </ul>
+                    </div>
+                    <div class="gallery-control">
+                    <?php 
+                        if($tabPicture['pic_user']==$_SESSION['pseudo']){
+                            $ID=$tabPicture["pic_id"];
+                    ?>
+                            <a href= <?php echo "delete.php?id=$ID";?>>
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+                            <a href=<?php echo "modif.php?id=$ID";?>>
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </a>
+                    <?php
+                        }
+                    
+                    ?>
                     </div>
                 </div>
 
