@@ -21,10 +21,32 @@
                 <h1>Connexion</h1>
 
                 <label><b>Nom d'utilisateur</b></label>
+                <?php 
+                    if(isset($_COOKIE['username'])){ 
+                        $var=$_COOKIE['username'];
+                ?>
+                <input type="text" value="<?php echo $var;?>" id="username" name="username" required>
+                <?php
+                    }
+                    else{
+                ?>
                 <input type="text" placeholder="nom_profil" id="username" name="username" required>
+                <?php } ?>
+
 
                 <label><b>Email</b></label>
+                <?php 
+                    if(isset($_COOKIE['mail'])){ 
+                        $var=$_COOKIE['mail'];
+                ?>
+                <input type="mail" value="<?php echo $var?>" id="mail" name="mail" required>
+                <?php
+                    }
+                    else{
+                ?>
                 <input type="mail" placeholder="instogram@email.com" id="mail" name="mail" required>
+                <?php } ?>
+
 
                 <label><b>Mot de passe</b></label>
                 <input type="password" placeholder="votre_mot_de_passe" id="password" name="password" required>

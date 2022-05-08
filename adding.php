@@ -1,25 +1,31 @@
 <?php           
 				session_start();
-				echo $_SESSION['pseudo_profil'];
+				echo $_SESSION['pseudo'];
 				include("ConnectDB.php");                    
 
                 if(isset($_FILES['picfile']) AND isset($_POST['picname']) AND isset($_POST['picdate']) AND isset($_POST['picplace'])){
                 	
                 	//setup variables
                     $picfilename = $_FILES['picfile']['name'];
+					
                     $picname=$_POST['picname'];
                     $picdate=$_POST['picdate'];
                     $picplace=$_POST['picplace'];
                     $picusername=$_SESSION['pseudo'];
                     if(empty($_POST['piccomment'])) $piccomment="";
                     else $piccomment=$_POST['piccomment'];
-                    
+
+					//recupérer l'extension de l'image
+					function get_file_extension($path) {
+						return substr(strrchr($path,'/'),1);
+					}
+					$pictype=get_file_extension($_FILES['picfile']['type']);
 
                     //push BDD
-                    $requete= "INSERT INTO `picture` (`pic_name`, `pic_date`, `pic_comment`, `pic_user`, `pic_place`) VALUES ('$picname', '$picdate', '$piccomment', '$picusername', '$picplace')";
+                    $requete= "INSERT INTO `picture` (`pic_name`, `pic_date`, `pic_comment`, `pic_user`, `pic_place`, `pic_type`) VALUES ('$picname', '$picdate', '$piccomment', '$picusername', '$picplace', '$pictype')";
                     $result=mysqli_query($connexion,$requete);
                     if(!$result){
-                    	echo mysqli_errno($connexion) . ": " . mysqli_error($connexion). "\n";
+                    	echo mysqli_errno($connexion) . " : " . mysqli_error($connexion). "\n";
                     	die();
                     }
 
@@ -39,7 +45,7 @@
 					echo "<br>";
 					
 					while ($id = mysqli_fetch_assoc($result2)) {
-						$target_file = $id['pic_id'].".jpg";
+						$target_file = $id['pic_id'].".".$id['pic_type'];
 					}
 
 					

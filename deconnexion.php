@@ -15,17 +15,13 @@
         <div id="container">
            <form method="POST">
                    <h1>Déconnexion</h1>
-
                    <br>
-
                    <label><i><b>Êtes-vous sûr de vouloir vous déconnecter ?</b></i></label>
-
                    <br>
                    <br>
-
                    <input type="submit" id='submitConnect' name="submitConnect" value='Se Déconnecter'>
 
-                  <i> <p  class="inscription"> Vous ne souhaitez pas vous déconnecter ? </i><br>
+                    <i> <p  class="inscription"> Vous ne souhaitez pas vous déconnecter ? </i><br>
                    <a href="menu.php"> Retourner sur l'album photo</a></p>
                </form>
                 
@@ -37,8 +33,6 @@
                     session_destroy();
                     header("Location:connexion.php");
                 }
-                
-
             ?>
         </div>
         
