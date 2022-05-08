@@ -66,25 +66,7 @@
                 <br><br>
                 <button class="bn"><input type="submit" value="submit" class="bnspan"></button>
 
-                <!-- <div class="bouton">
-                    <button id="btn">
-                        <p id="btnText">ADD</p>
-                        <div class="check-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                                <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-                <script type="text/javascript">
-                    const btn = document.querySelector("#btn");
-                    const btnText = document.querySelector("#btnText");
-            
-                    btn.onclick = () => {
-                        btnText.innerHTML = "Thanks";
-                        btn.classList.add("active");
-                    };
-                </script> -->
+                
             </form>
 
         </div>
