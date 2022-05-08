@@ -1,9 +1,3 @@
-/* .thx{
-    position: fixed; 
-    left:50%;
-    transform:translateX(-50%);
-    bottom: 15px;
-} */
 
 .menuD{
     width: 100%;
@@ -13,7 +7,9 @@
     background-color: white;
     height:80px;
     z-index:10;
+    
 }
+
 .menuD a{
     font-family: 'Oswald', sans-serif;
     font-weight:500;
@@ -27,6 +23,10 @@
     position:relative;
     display:inline-block;
 }
+*:hover{
+  text-decoration: none;
+  color:#16151b;
+}
 .menuD a:before{
     content:'';
     position: absolute;
@@ -37,6 +37,7 @@
     animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
 }
 .menuD a:hover:before{
+  
     animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
     text-decoration: none;
 }
